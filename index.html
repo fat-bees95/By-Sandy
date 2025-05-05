@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	  <meta charset="UTF-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <title>Paseo de Otoño</title>
+	  <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	   <div class="container">
+	    <header>
+	         <div class="profile-pic">
+	         <img src="./profile-pict.jpg" alt="Foto de perfil" />
+            </div>
+              <div class="title-group">
+               <img src="./leaf-icon.png" alt="Leaf Icon" class="leaf-icon" />
+               <h1>Paseo de Otoño</h1>
+              </div>
+             <div class="logo-art">
+                    <img src="images/logo-pic.png" alt="BySandy Regalos">
+             </div>
+            </header>
+        <div class="block sidebar">
+            <h3>Menú</h3>
+            <ul>
+                <li>Explorar</li>
+                <li>Galería</li>
+                <li>Temporadas</li>
+            </ul>
+        </div>
+        <div class="block main">
+            <h2>Bienvenido</h2>
+            <p>Este es un espacio acogedor inspirado en un sendero otoñal. Disfruta de historias, imágenes y memorias de otoño.</p>
+        </div>
+       <div class="block card1">
+            <h3>Foto 1</h3>
+            <img src="path1.jpg" alt="Sendero con hojas" class="responsive-img">
+       </div>
+       <div class="block card2">
+           <h3>Foto 2</h3>
+           <img src="path2.jpg" alt="Vista otoñal" class="responsive-img">
+       </div>
+       <div class="block card3">
+           <h3>Notas</h3>
+           <p>“El otoño es una segunda primavera donde cada hoja es una flor.”</p>
+       </div>
+       <div class="block contact-section">
+           <h2>Contáctanos</h2>
+           <form class="contact-form" action="https://formsubmit.co/bejarano67@gmail.com" method="POST">
+               <input type="hidden" name="_captcha" value="false">
+               <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" required>
+
+              <label for="email">Correo electrónico:</label>
+              <input type="email" id="email" name="email" required>
+
+              <label for="message">Mensaje:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+
+             <button type="submit">Enviar</button>
+          </form>
+      </div>
+
+
+    </div>
+
+    <footer>
+       Imagen de <a href="https://pixabay.com/es/users/minka2507-3728206/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5724397" target="_blank">minka2507</a> en 
+       <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5724397" target="_blank">Pixabay</a>
+       <p style="font-size: 0.8em;">
+      Este sitio está licenciado bajo <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>.
+     </p>
+
+   </footer>
+
+    <script>
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', function (e) {
+        // Crear animación
+        const container = document.createElement('div');
+        container.classList.add('falling-leaves');
+        document.body.appendChild(container);
+
+     for (let i = 0; i < 15; i++) {
+      const leaf = document.createElement('div');
+      leaf.classList.add('leaf');
+      leaf.style.left = Math.random() * 100 + 'vw';
+      leaf.style.animationDuration = (3 + Math.random() * 3) + 's';
+      leaf.style.opacity = Math.random();
+      container.appendChild(leaf);
+    }
+
+    // Eliminar después de unos segundos
+    setTimeout(() => {
+      container.remove();
+    }, 6000);
+  });
+</script>
+
+
+</body>
+</html>
